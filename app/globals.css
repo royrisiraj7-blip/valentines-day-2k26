@@ -1,0 +1,166 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 30 40% 97%;
+    --foreground: 20 15% 18%;
+    --card: 30 30% 96%;
+    --card-foreground: 20 15% 18%;
+    --popover: 30 30% 96%;
+    --popover-foreground: 20 15% 18%;
+    --primary: 350 35% 55%;
+    --primary-foreground: 30 40% 97%;
+    --secondary: 30 25% 93%;
+    --secondary-foreground: 20 15% 25%;
+    --muted: 30 20% 93%;
+    --muted-foreground: 20 10% 45%;
+    --accent: 350 30% 90%;
+    --accent-foreground: 350 35% 40%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 20 15% 88%;
+    --input: 20 15% 88%;
+    --ring: 350 35% 55%;
+    --radius: 0.5rem;
+    --rose: 350 35% 72%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: hsl(350 35% 72% / 0.3);
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+.animate-fade-in-up-delay-1 {
+  animation: fade-in-up 0.8s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.animate-fade-in-up-delay-2 {
+  animation: fade-in-up 0.8s ease-out 0.4s forwards;
+  opacity: 0;
+}
+
+.animate-fade-in-up-delay-3 {
+  animation: fade-in-up 0.8s ease-out 0.6s forwards;
+  opacity: 0;
+}
+
+@keyframes float-heart {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-110vh) translateX(30px) rotate(25deg);
+    opacity: 0;
+  }
+}
+
+.animate-float-heart {
+  animation: float-heart 20s ease-in-out infinite;
+}
+
+/* Teddy Day animations */
+
+@keyframes teddy-breathe {
+  0%,
+  100% {
+    transform: scale(1) translateY(0);
+  }
+  50% {
+    transform: scale(1.03) translateY(-3px);
+  }
+}
+
+.animate-teddy-breathe {
+  animation: teddy-breathe 3s ease-in-out infinite;
+}
+
+@keyframes heart-burst {
+  0% {
+    transform: scale(0) translate(0, 0);
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2) translate(var(--tw-translate-x, 0), -30px);
+    opacity: 0;
+  }
+}
+
+.animate-heart-burst {
+  animation: heart-burst 0.9s ease-out forwards;
+}
+
+@keyframes screen-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  15% {
+    transform: translateX(-4px);
+  }
+  30% {
+    transform: translateX(4px);
+  }
+  45% {
+    transform: translateX(-3px);
+  }
+  60% {
+    transform: translateX(3px);
+  }
+  75% {
+    transform: translateX(-1px);
+  }
+}
+
+.animate-screen-shake {
+  animation: screen-shake 0.45s ease-out;
+}
